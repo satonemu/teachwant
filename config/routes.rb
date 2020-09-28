@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
-  devise_for :admins
-  devise_for :users
-  
+  devise_for :admins ,controllers: { sessions: 'public/admins/sessions',  
+                                      registrations: 'public/admins/passwords',
+                                      passwords: 'public/admins/passwords' }
+  devise_for :users ,controllers: {   sessions: 'public/users/sessions',
+                                      registrations: 'public/users/registrations', 
+                                      passwords: 'public/users/passwords' }
+
+  }
   namespace :admin do
     get 'home/top'
   end
