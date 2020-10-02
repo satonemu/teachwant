@@ -25,6 +25,9 @@
                   ようこそ、<%= current_user.name %>さん!
                 </li>
                 <li>
+                  <%= link_to "マイページ", public_user_path(current_user) %>
+                </li>
+                <li>
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                 </li>
             <% elsif admin_signed_in? %>
